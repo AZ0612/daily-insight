@@ -1,9 +1,48 @@
 {
   "last_updated": "2026-06-18",
-  "records": [],
+  "records": [
+    {
+      "date": "2026-06-18",
+      "items": [
+        {
+          "brand": "京东",
+          "title": "京东618大促GMV同比增长15%成绩单公布"
+        },
+        {
+          "brand": "美团",
+          "title": "美团外卖启动无人机配送覆盖50城计划"
+        },
+        {
+          "brand": "抖音",
+          "title": "抖音电商直播带货新规限制虚假宣传"
+        }
+      ],
+      "keywords": [
+        "618",
+        "GMV",
+        "无人机配送",
+        "直播带货"
+      ],
+      "brands": [
+        "京东",
+        "美团",
+        "抖音"
+      ],
+      "timestamp": "2026-06-18T17:30:00+08:00"
+    }
+  ],
   "aggregated": {
-    "brand_weights": {},
-    "keyword_weights": {},
-    "total_likes": 0
+    "brand_weights": {
+      "京东": 1,
+      "美团": 1,
+      "抖音": 1
+    },
+    "keyword_weights": {
+      "618": 1,
+      "GMV": 1,
+      "无人机配送": 1,
+      "直播带货": 1
+    },
+    "total_likes": 3
   }
 }
