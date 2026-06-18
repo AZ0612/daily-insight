@@ -38,45 +38,45 @@
     }
     .header .date { color: var(--text-muted); font-size: 0.88em; margin-top: 6px; }
 
-    /* ===== ECOM PROMO HERO ===== */
-    .ecom-hero {
-      background: linear-gradient(135deg, #2d0a0a 0%, #4a1212 30%, #3d0f0f 60%, #1a0505 100%);
+    /* ===== HERO CARD ===== */
+    .world-cup-hero {
+      background: linear-gradient(135deg, #2d0a0a 0%, #4a1515 30%, #3d1111 60%, #1f0808 100%);
       border-radius: 20px; padding: 32px 36px; margin-bottom: 32px;
       border: 1px solid rgba(239,68,68,0.25);
       position: relative; overflow: hidden;
       animation: fadeInUp 0.7s ease-out 0.2s both;
       cursor: pointer; transition: transform 0.3s, box-shadow 0.3s;
     }
-    .ecom-hero:hover {
+    .world-cup-hero:hover {
       transform: translateY(-3px);
       box-shadow: 0 20px 60px rgba(239,68,68,0.2);
     }
-    .ecom-hero::before {
+    .world-cup-hero::before {
       content: ''; position: absolute; top: -40%; right: -10%; width: 280px; height: 280px;
       background: radial-gradient(circle, rgba(239,68,68,0.12) 0%, transparent 70%);
       animation: float 6s ease-in-out infinite;
     }
-    .ecom-hero::after {
+    .world-cup-hero::after {
       content: '🛒'; position: absolute; top: 20px; right: 30px; font-size: 3.5em;
       opacity: 0.25; animation: spin 20s linear infinite;
     }
     @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
     @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
 
-    .hero-badge {
+    .wc-badge {
       display: inline-flex; align-items: center; gap: 6px;
       background: rgba(239,68,68,0.2); border: 1px solid rgba(239,68,68,0.4);
       padding: 4px 14px; border-radius: 20px; font-size: 0.74em; font-weight: 700;
       color: #fca5a5; margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.05em;
     }
-    .hero-title { font-size: 1.3em; font-weight: 700; color: #fff; margin-bottom: 12px; line-height: 1.4; position: relative; z-index: 1; }
-    .hero-body { font-size: 0.9em; color: rgba(255,255,255,0.85); line-height: 1.8; position: relative; z-index: 1; }
-    .hero-comment {
+    .wc-title { font-size: 1.3em; font-weight: 700; color: #fff; margin-bottom: 12px; line-height: 1.4; position: relative; z-index: 1; }
+    .wc-body { font-size: 0.9em; color: rgba(255,255,255,0.85); line-height: 1.8; position: relative; z-index: 1; }
+    .wc-comment {
       margin-top: 14px; padding: 10px 14px; background: rgba(0,0,0,0.3);
       border-left: 3px solid #fca5a5; border-radius: 0 8px 8px 0;
-      font-size: 0.84em; color: #fecaca; position: relative; z-index: 1;
+      font-size: 0.84em; color: #fde68a; position: relative; z-index: 1;
     }
-    .hero-source { margin-top: 10px; font-size: 0.74em; color: rgba(255,255,255,0.5); position: relative; z-index: 1; }
+    .wc-source { margin-top: 10px; font-size: 0.74em; color: rgba(255,255,255,0.5); position: relative; z-index: 1; }
 
     /* ===== TAB NAV ===== */
     .tab-nav {
@@ -107,11 +107,11 @@
       100% { left: 150%; }
     }
     .tab-btn:hover { color: #fff; background: rgba(255,255,255,0.06); }
+    .tab-btn[data-tab="ecom"].active { background: rgba(168,85,247,0.2); color: #d8b4fe; box-shadow: 0 0 16px rgba(168,85,247,0.25); }
     .tab-btn[data-tab="ai"].active { background: rgba(234,179,8,0.2); color: #fde047; box-shadow: 0 0 16px rgba(234,179,8,0.25); }
     .tab-btn[data-tab="brand"].active { background: rgba(249,115,22,0.2); color: #fdba74; box-shadow: 0 0 16px rgba(249,115,22,0.25); }
-    .tab-btn[data-tab="ecom"].active { background: rgba(168,85,247,0.2); color: #d8b4fe; box-shadow: 0 0 16px rgba(168,85,247,0.25); }
     .tab-btn[data-tab="media"].active { background: rgba(0,47,167,0.25); color: #93c5fd; box-shadow: 0 0 16px rgba(0,47,167,0.3); }
-    .tab-btn[data-tab="report"].active { background: rgba(107,114,128,0.2); color: #d1d5db; box-shadow: 0 0 16px rgba(107,114,128,0.2); }
+    .tab-btn[data-tab="report"].active { background: rgba(34,197,94,0.2); color: #86efac; box-shadow: 0 0 16px rgba(34,197,94,0.25); }
 
     /* Tab icon animations */
     .tab-icon { display: inline-block; }
@@ -221,22 +221,6 @@
     }
     .news-card.expanded .card-body { max-height: 400px; opacity: 1; margin-top: 10px; }
 
-    /* Card image/thumbnail */
-    .card-media {
-      margin-left: 34px; margin-top: 10px; border-radius: 8px; overflow: hidden;
-      max-height: 0; opacity: 0; transition: max-height 0.4s ease 0.05s, opacity 0.3s 0.05s, margin-top 0.3s;
-    }
-    .news-card.expanded .card-media { max-height: 160px; opacity: 1; margin-top: 12px; }
-    .card-media img {
-      width: 100%; height: 120px; object-fit: contain; border-radius: 8px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(0,0,0,0.3);
-    }
-    .card-media video {
-      width: 100%; max-height: 120px; border-radius: 8px;
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
     .card-comment {
       margin-top: 10px; margin-left: 34px; padding: 8px 12px;
       border-radius: 0 8px 8px 0; border-left: 3px solid;
@@ -250,7 +234,9 @@
       margin-top: 6px; margin-left: 34px; font-size: 0.7em; color: var(--text-muted);
       max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.3s ease 0.12s, opacity 0.3s 0.12s;
     }
-    .news-card.expanded .card-source { max-height: 30px; opacity: 1; }
+    .news-card.expanded .card-source { max-height: 60px; opacity: 1; }
+    .card-source a { color: var(--text-muted); text-decoration: underline; transition: color 0.2s; }
+    .card-source a:hover { color: var(--text-secondary); }
 
     .expand-hint {
       position: absolute; top: 24px; right: 22px; font-size: 0.72em; color: var(--text-muted);
@@ -339,9 +325,9 @@
       100% { left: 150%; }
     }
     /* Color-coded top border per tab */
+    #tab-ecom .brand-nav { border-top: 2px solid rgba(168,85,247,0.5); background: linear-gradient(180deg, rgba(168,85,247,0.06) 0%, var(--bg-primary) 40%, transparent 100%); }
     #tab-ai .brand-nav { border-top: 2px solid rgba(234,179,8,0.5); background: linear-gradient(180deg, rgba(234,179,8,0.06) 0%, var(--bg-primary) 40%, transparent 100%); }
     #tab-brand .brand-nav { border-top: 2px solid rgba(249,115,22,0.5); background: linear-gradient(180deg, rgba(249,115,22,0.06) 0%, var(--bg-primary) 40%, transparent 100%); }
-    #tab-ecom .brand-nav { border-top: 2px solid rgba(168,85,247,0.5); background: linear-gradient(180deg, rgba(168,85,247,0.06) 0%, var(--bg-primary) 40%, transparent 100%); }
     #tab-media .brand-nav { border-top: 2px solid rgba(0,47,167,0.6); background: linear-gradient(180deg, rgba(0,47,167,0.08) 0%, var(--bg-primary) 40%, transparent 100%); }
 
     .brand-nav-label {
@@ -367,18 +353,23 @@
     }
     .brand-chip:hover { transform: scale(1.05); }
     .brand-chip.active { transform: scale(1.1) !important; opacity: 1 !important; }
+    /* Ecom brand chips - purple */
+    #tab-ecom .brand-chip { background: rgba(168,85,247,0.1); border-color: rgba(168,85,247,0.3); color: #d8b4fe; }
+    #tab-ecom .brand-chip:hover { background: rgba(168,85,247,0.22); border-color: rgba(168,85,247,0.5); }
     /* AI brand chips - yellow */
     #tab-ai .brand-chip { background: rgba(234,179,8,0.1); border-color: rgba(234,179,8,0.3); color: #fde047; }
     #tab-ai .brand-chip:hover { background: rgba(234,179,8,0.22); border-color: rgba(234,179,8,0.5); }
     /* Brand brand chips - orange */
     #tab-brand .brand-chip { background: rgba(249,115,22,0.1); border-color: rgba(249,115,22,0.3); color: #fdba74; }
     #tab-brand .brand-chip:hover { background: rgba(249,115,22,0.22); border-color: rgba(249,115,22,0.5); }
-    /* Ecom brand chips - purple */
-    #tab-ecom .brand-chip { background: rgba(168,85,247,0.1); border-color: rgba(168,85,247,0.3); color: #d8b4fe; }
-    #tab-ecom .brand-chip:hover { background: rgba(168,85,247,0.22); border-color: rgba(168,85,247,0.5); }
     /* Media brand chips - Klein blue */
     #tab-media .brand-chip { background: rgba(0,47,167,0.12); border-color: rgba(59,130,246,0.3); color: #93c5fd; }
     #tab-media .brand-chip:hover { background: rgba(0,47,167,0.25); border-color: rgba(59,130,246,0.5); }
+
+    /* Report tab placeholder */
+    .report-placeholder {
+      text-align: center; padding: 60px 20px; color: var(--text-muted); font-size: 0.92em;
+    }
 
     /* Footer */
     footer {
@@ -412,8 +403,8 @@
     @media (max-width: 768px) {
       .container { padding: 16px 12px; }
       .header h1 { font-size: 1.5em; }
-      .ecom-hero { padding: 22px 18px; }
-      .hero-title { font-size: 1.05em; }
+      .world-cup-hero { padding: 22px 18px; }
+      .wc-title { font-size: 1.05em; }
       .tab-btn { padding: 10px 12px; font-size: 0.8em; }
       .news-card { padding: 18px 16px; padding-right: 36px; }
       .keyboard-hint { display: none; }
@@ -428,16 +419,16 @@
   <div class="container">
     <header class="header">
       <h1>每日行业洞察</h1>
-      <p class="date">2026/6/18 星期三 · 21条精选</p>
+      <p class="date">2026/6/18 星期三 · 9条精选（严格时效版）</p>
     </header>
 
-    <!-- Ecom Promo Hero (置顶) -->
-    <div class="ecom-hero" onclick="this.classList.toggle('hero-expanded')">
-      <div class="hero-badge">🛒 电商 · PROMO TODAY</div>
-      <div class="hero-title">五平台被约谈：618"百亿补贴"非真百亿，监管重塑促销逻辑</div>
-      <div class="hero-body">6月11日，淘宝(天猫)、京东、拼多多、抖音、小红书因"618百亿补贴"虚假宣传被监管约谈，第二批典型问题公布。拼多多同步修订《百亿补贴活动规则》6月12日生效，明确临期商品标准。消费疲软背景下（1-4月社零增1.9%），监管严禁价格战式补贴，推动平台竞争从"烧钱补贴"回归"真金白银"。</div>
-      <div class="hero-comment">💬 监管倒逼补贴从营销话术回归真金白银，"百亿"三个字不能再随便用了</div>
-      <div class="hero-source">来源：<a href="https://www.news.cn/fortune/20260611/a7e378d778904a36a3c27322951848e9/c.html">新华网</a> / <a href="https://www.21jingji.com/article/20260615/herald/46eb9dd13f24fba97bd8913559dc96a6.html">21经济网</a></div>
+    <!-- Hero Card -->
+    <div class="world-cup-hero" onclick="this.classList.toggle('wc-expanded')">
+      <div class="wc-badge">🛒 电商 · PROMO</div>
+      <div class="wc-title">618百亿补贴退烧：茅台散批1630元/1499引流款消失/白酒告别低价混战</div>
+      <div class="wc-body">每日经济新闻6/18报道，各平台618白酒补贴大幅收缩。茅台散瓶批价稳定在1630元/瓶，原箱约1660元。去年标志性的1499元引流款彻底消失。京东补贴后最低1699元，拼多多限购一瓶低至1579元。国海证券分析：监管约谈17家平台叫停内卷式补贴+酒企主动去库存控量为双重驱动力。警惕"5+1"掺假套装（6瓶中混1-2瓶假酒压价）。</div>
+      <div class="wc-comment">💬 当1499不再是引流神器，平台终于得拼供应链真本事了。</div>
+      <div class="wc-source">来源：<a href="https://www.nbd.com.cn/articles/2026-06-18/4430491.html" target="_blank">每日经济新闻</a> / <a href="https://www.21jingji.com/article/20260606/herald/a8fbfc7bea074d937ac4270f6fcab83a.html" target="_blank">21财经</a></div>
     </div>
 
     <!-- Tabs -->
@@ -446,77 +437,45 @@
       <button class="tab-btn" data-tab="ai"><span class="tab-icon">⚡</span> AI / 科技</button>
       <button class="tab-btn" data-tab="brand"><span class="tab-icon">👑</span> 头部品牌</button>
       <button class="tab-btn" data-tab="media"><span class="tab-icon">🔥</span> 媒体</button>
-      <button class="tab-btn" data-tab="report"><span class="tab-icon">📄</span> 推荐报告</button>
+      <button class="tab-btn" data-tab="report"><span class="tab-icon">📑</span> 推荐报告</button>
     </div>
 
     <!-- ===== 电商 ===== -->
     <div class="tab-content active" id="tab-ecom">
       <div class="brand-nav">
         <span class="brand-nav-label">🛒 电商动态 ▸</span>
-        <span class="brand-chip" onclick="scrollToCard('ecom',0)">拼多多</span>
-        <span class="brand-chip" onclick="scrollToCard('ecom',1)">抖音</span>
-        <span class="brand-chip" onclick="scrollToCard('ecom',2)">美团</span>
-        <span class="brand-chip" onclick="scrollToCard('ecom',3)">淘宝闪购</span>
-        <span class="brand-chip" onclick="scrollToCard('ecom',4)">即时零售</span>
-        <span class="brand-chip" onclick="scrollToCard('ecom',5)">京东</span>
-        <span class="brand-chip" onclick="scrollToCard('ecom',6)">监管</span>
-        <span class="brand-chip" onclick="scrollToCard('ecom',7)">快手</span>
+        <span class="brand-chip" onclick="scrollToCard('ecom',0)">抖音</span>
+        <span class="brand-chip" onclick="scrollToCard('ecom',1)">天猫/京东</span>
+        <span class="brand-chip" onclick="scrollToCard('ecom',2)">茅台/拼多多</span>
+        <span class="brand-chip" onclick="scrollToCard('ecom',3)">京东/美ONE</span>
       </div>
-      <div class="news-card cat-ecom" onclick="toggleCard(event, this)" data-brand="抖音电商" data-keywords="618,破亿商家,消费券,大促">
+      <div class="news-card cat-ecom" onclick="toggleCard(event, this)" data-brand="抖音" data-keywords="618战报,破亿商家,中小达人,去头部化,GMV">
         <span class="like-btn" onclick="toggleLike(event,this)">🤍</span>
-        <div class="card-header"><span class="card-num">1</span><span class="card-title">抖音618破亿商家同比增325%</span></div>
-        <div class="card-body">2026抖音商城618首阶段数据显示，成交额破亿元商家数量同比增长325%。消费券带动效果显著，百亿补贴发力首周大批商家卖爆。</div>
-        <div class="card-comment">消费券杠杆撬动头部商家集中爆发</div>
-        <div class="card-source">来源：<a href="https://m.sohu.com/a/1025990395_121400326">搜狐</a> / 抖音商城</div>
+        <div class="card-header"><span class="card-num">1</span><span class="card-title">抖音618终极战报：破亿商家增325%</span></div>
+        <div class="card-body">抖音电商618大促（5.15-6.18）收官，破亿商家同比增325%，破亿爆品增300%。开启首三天10亿日销直播间增116%。中小达人（百万粉以下）贡献近80%达人带货GMV，去头部化趋势明显。平台投入百亿消费券+亿级流量资源。</div>
+        <div class="card-comment">当头部主播变成"百亿分之一"，真正的护城河是供应链和选品能力。</div>
+        <div class="card-source">来源：<a href="https://k.sina.com.cn/article_7879848900_1d5acf3c406802yyou.html" target="_blank">新浪财经</a> / <a href="https://www.100ec.cn/detail--6659500.html" target="_blank">网经社</a></div>
       </div>
-      <div class="news-card cat-ecom" onclick="toggleCard(event, this)" data-brand="美团" data-keywords="财报,Q1,研发,减亏">
+      <div class="news-card cat-ecom" onclick="toggleCard(event, this)" data-brand="天猫,京东" data-keywords="618消费,理性消费,悦己消费,服务型消费,预算">
         <span class="like-btn" onclick="toggleLike(event,this)">🤍</span>
-        <div class="card-header"><span class="card-num">2</span><span class="card-title">美团Q1营收910亿研发增22%，减亏96亿</span></div>
-        <div class="card-body">美团2026年Q1营收910亿元同比增5.6%超预期，环比减亏96亿元。研发投入同比增长22%，释放降本增效信号。</div>
-        <div class="card-comment">减亏比增收更令市场兴奋</div>
-        <div class="card-source">来源：<a href="https://cn.chinadaily.com.cn/a/202606/01/WS6a1d5800a310942cc49af741.html">中国日报网</a></div>
+        <div class="card-header"><span class="card-num">2</span><span class="card-title">央视618消费观察：72.7%更谨慎但近半预算上升</span></div>
+        <div class="card-body">央视网引用《2026年618前瞻调研报告》显示，72.7%消费者购物态度更谨慎，85.4%提前列好清单。但近半受访者实际增加了购物预算——理性≠不花钱。悦己消费（旅行/宠物/家居）和服务型消费（家政/保洁/洗衣）成新增长极。</div>
+        <div class="card-comment">消费者不是没钱，是不愿为"凑单机制"买单了。</div>
+        <div class="card-source">来源：<a href="https://finance.cctv.com/2026/06/18/ARTI62ttPpPVWGa63mIrG1d3260615.shtml" target="_blank">央视网</a></div>
       </div>
-      <div class="news-card cat-ecom" onclick="toggleCard(event, this)" data-brand="淘宝闪购" data-keywords="即时零售,日单,饿了么,准时率">
+      <div class="news-card cat-ecom" onclick="toggleCard(event, this)" data-brand="茅台,拼多多,京东" data-keywords="百亿补贴,茅台批价,白酒,1499,退烧">
         <span class="like-btn" onclick="toggleLike(event,this)">🤍</span>
-        <div class="card-header"><span class="card-num">3</span><span class="card-title">淘宝闪购日单5000万，冲市场绝对第一</span></div>
-        <div class="card-body">淘宝闪购联合饿了么已实现日订单超4000万、准时率97%。2026年目标"市场绝对第一"，日单量已突破5000万关口，阿里持续加大投入。</div>
-        <div class="card-comment">即时零售决赛圈从"有没有"变成"准不准"</div>
-        <div class="card-source">来源：<a href="https://www.stcn.com/article/detail/3579422.html">证券时报</a> / 雪球</div>
+        <div class="card-header"><span class="card-num">3</span><span class="card-title">618百亿补贴退烧：茅台散批1630/1499引流款消失</span></div>
+        <div class="card-body">每日经济新闻6/18报道，各平台618白酒补贴大幅收缩。茅台散瓶批价稳定在1630元/瓶，原箱约1660元。去年标志性的1499元引流款彻底消失。京东补贴后最低1699元，拼多多限购一瓶低至1579元。国海证券分析：监管约谈17家平台叫停内卷式补贴+酒企主动去库存控量为双重驱动力。警惕"5+1"掺假套装（6瓶中混1-2瓶假酒压价）。</div>
+        <div class="card-comment">当1499不再是引流神器，平台终于得拼供应链真本事了。</div>
+        <div class="card-source">来源：<a href="https://www.nbd.com.cn/articles/2026-06-18/4430491.html" target="_blank">每日经济新闻</a> / <a href="https://www.21jingji.com/article/20260606/herald/a8fbfc7bea074d937ac4270f6fcab83a.html" target="_blank">21财经</a></div>
       </div>
-      <div class="news-card cat-ecom" onclick="toggleCard(event, this)" data-brand="即时零售" data-keywords="万亿,商务部,利润战">
+      <div class="news-card cat-ecom" onclick="toggleCard(event, this)" data-brand="京东,美ONE" data-keywords="AI直播,数字人,京东JoyStreamer,选品效率,去头部化">
         <span class="like-btn" onclick="toggleLike(event,this)">🤍</span>
-        <div class="card-header"><span class="card-num">4</span><span class="card-title">即时零售2026规模破万亿元</span></div>
-        <div class="card-body">商务部研究院预测2026年我国即时零售市场规模将突破万亿元。行业从"速度战"转向"利润战"，履约效率不再是唯一竞争维度。</div>
-        <div class="card-comment">万亿门槛后竞争焦点从履约转向毛利</div>
-        <div class="card-source">来源：<a href="http://www.news.cn/fortune/20251126/007e0fab2ad24c2eb3f8de74e30c09b6/c.html">新华网</a></div>
-      </div>
-      <div class="news-card cat-ecom" onclick="toggleCard(event, this)" data-brand="京东" data-keywords="618,终极降价,疯狂52小时">
-        <span class="like-btn" onclick="toggleLike(event,this)">🤍</span>
-        <div class="card-header"><span class="card-num">5</span><span class="card-title">京东618终极降价6.16晚8点开抢</span></div>
-        <div class="card-body">2026年京东618最后冲刺阶段于6月16日晚8点正式开启"疯狂52小时"。市场监管总局同步发文严查虚假降价。</div>
-        <div class="card-comment">从拼时长到拼爆发力的决赛时刻</div>
-        <div class="card-source">来源：<a href="https://finance.sina.com.cn/tjhz/2026-06-16/doc-inicqnrx4521146.shtml">新浪财经</a></div>
-      </div>
-      <div class="news-card cat-ecom" onclick="toggleCard(event, this)" data-brand="市场监管总局" data-keywords="合规,约谈,虚假降价,618">
-        <span class="like-btn" onclick="toggleLike(event,this)">🤍</span>
-        <div class="card-header"><span class="card-num">6</span><span class="card-title">监管明确618电商6大合规责任</span></div>
-        <div class="card-body">市场监管总局严查618虚假降价；佛山市监局通报约谈京东、淘宝、拼多多等平台；网经社发布"2026年618十大预警"。</div>
-        <div class="card-comment">地方约谈+总局严查形成双层执法网</div>
-        <div class="card-source">来源：<a href="https://www.21jingji.com/article/20260615/herald/46eb9dd13f24fba97bd8913559dc96a6.html">21经济网</a></div>
-      </div>
-      <div class="news-card cat-ecom" onclick="toggleCard(event, this)" data-brand="快手电商" data-keywords="千亿流量,启源计划,商家大会">
-        <span class="like-btn" onclick="toggleLike(event,this)">🤍</span>
-        <div class="card-header"><span class="card-num">7</span><span class="card-title">快手618投千亿流量扶优质供给</span></div>
-        <div class="card-body">快手电商宣布全年投入千亿流量扶持优质供给，新商政策"降本与激励并举"，同步推出"启源计划"重塑机构生态。</div>
-        <div class="card-comment">从流量补贴转向供给质量筛选</div>
-        <div class="card-source">来源：<a href="https://www.chinanews.com.cn/cj/2026/04-23/10609346.shtml">中新网</a></div>
-      </div>
-      <div class="news-card cat-ecom" onclick="toggleCard(event, this)" data-brand="拼多多" data-keywords="百亿补贴,活动规则,临期商品">
-        <span class="like-btn" onclick="toggleLike(event,this)">🤍</span>
-        <div class="card-header"><span class="card-num">8</span><span class="card-title">拼多多修订百亿补贴规则6.12生效</span></div>
-        <div class="card-body">配合监管约谈，拼多多同步修订《百亿补贴活动规则》6月12日生效，明确临期商品标准和虚假宣传红线。</div>
-        <div class="card-comment">规则修订速度说明平台已预判监管走向</div>
-        <div class="card-source">来源：<a href="https://www.news.cn/fortune/20260611/a7e378d778904a36a3c27322951848e9/c.html">新华网</a></div>
+        <div class="card-header"><span class="card-num">4</span><span class="card-title">AI接管618直播间：京东数字人增6倍GMV破7000万</span></div>
+        <div class="card-body">证券时报6/18报道，618标志AI从营销噱头变为运营基础设施。京东JoyStreamer数字主播免费开放后播量暴增10倍，618首4小时使用商家增6倍，GMV突破7000万。AI全链路覆盖：选品周期从7-10天压缩至1-2天，广告运营工作量降低80%，复盘从3天缩至4小时。美ONE（李佳琦）推出AI"教学助手"辅助数据分析。</div>
+        <div class="card-comment">顶流主播会变成"决策入口"而非"卖货机器"——这是直播电商的成人礼。</div>
+        <div class="card-source">来源：<a href="https://www.stcn.com/article/detail/3967620.html" target="_blank">证券时报</a></div>
       </div>
     </div>
 
@@ -524,38 +483,22 @@
     <div class="tab-content" id="tab-ai">
       <div class="brand-nav">
         <span class="brand-nav-label">🤖 科技公司 ▸</span>
-        <span class="brand-chip" onclick="scrollToCard('ai',0)">AI直播</span>
-        <span class="brand-chip" onclick="scrollToCard('ai',1)">OpenAI</span>
-        <span class="brand-chip" onclick="scrollToCard('ai',2)">英伟达</span>
-        <span class="brand-chip" onclick="scrollToCard('ai',3)">字节豆包</span>
+        <span class="brand-chip" onclick="scrollToCard('ai',0)">智谱/MiniMax</span>
+        <span class="brand-chip" onclick="scrollToCard('ai',1)">抖音/淘宝</span>
       </div>
-      <div class="news-card cat-ai" onclick="toggleCard(event, this)" data-brand="京东/淘天" data-keywords="AI数字人,直播,618,带货">
+      <div class="news-card cat-ai" onclick="toggleCard(event, this)" data-brand="智谱,MiniMax" data-keywords="科创板,AI大模型,上市标准,第五套,IPO">
         <span class="like-btn" onclick="toggleLike(event,this)">🤍</span>
-        <div class="card-header"><span class="card-num">1</span><span class="card-title">AI数字人成618直播标配，真人主播进入结构性失业期</span></div>
-        <div class="card-body">2026年618期间，AI数字人主播全面取代超级主播成为各平台标配。京东用"高定"数字人进入顶级品牌直播间，品牌加码投入使得人力成本降低、全时段覆盖成为现实。</div>
-        <div class="card-comment">真人主播进入结构性失业期</div>
-        <div class="card-source">来源：<a href="https://www.21jingji.com/article/20260603/herald/0a40bcae5bbef32cc285b2898d2aeefa.html">21财经</a></div>
+        <div class="card-header"><span class="card-num">1</span><span class="card-title">科创板第五套上市标准首向AI大模型企业开放</span></div>
+        <div class="card-body">上交所6/18正式发文明确AI大模型企业适用科创板第五套上市标准。申报时需至少具有一项核心大模型产品已通过国家备案。智谱（港股上市不到半年涨10倍）科创板IPO辅导已进入验收阶段，MiniMax同步推进。此举为国产AI企业回A上市铺平道路。</div>
+        <div class="card-comment">A股终于给AI开了专用通道——比技术突破更难的是制度突破。</div>
+        <div class="card-source">来源：<a href="https://www.nbd.com.cn/articles/2026-06-18/4430143.html" target="_blank">每经</a> / <a href="https://finance.sina.com.cn/wm/2026-06-18/doc-inicuyvx5583683.shtml" target="_blank">新浪财经</a></div>
       </div>
-      <div class="news-card cat-ai" onclick="toggleCard(event, this)" data-brand="OpenAI" data-keywords="超级应用,IPO,Agent,GPT-6">
+      <div class="news-card cat-ai" onclick="toggleCard(event, this)" data-brand="抖音,淘宝" data-keywords="AI工具,数字人成本,商家效率,消费者态度,平台税">
         <span class="like-btn" onclick="toggleLike(event,this)">🤍</span>
-        <div class="card-header"><span class="card-num">2</span><span class="card-title">ChatGPT转型超级应用冲刺IPO</span></div>
-        <div class="card-body">据FT 6月7日报道，OpenAI正将ChatGPT重构为集聊天、代码、Agent于一体的"超级应用"为上市做准备。GPT-6据传已在内测。</div>
-        <div class="card-comment">从模型公司转型平台公司的赌注</div>
-        <div class="card-source">来源：<a href="https://www.reuters.com/business/openai-plans-chatgpt-superapp-overhaul-ahead-listing-ft-reports-2026-06-07/">Reuters</a> / FT</div>
-      </div>
-      <div class="news-card cat-ai" onclick="toggleCard(event, this)" data-brand="NVIDIA" data-keywords="GTC,Vera Rubin,Blackwell Ultra,算力">
-        <span class="like-btn" onclick="toggleLike(event,this)">🤍</span>
-        <div class="card-header"><span class="card-num">3</span><span class="card-title">英伟达发布Vera Rubin下代架构路线图</span></div>
-        <div class="card-body">GTC 2026上黄仁勋发布Vera Rubin系统级架构路线图定义未来十年AI算力方向，同时推出Blackwell Ultra加速卡，6月GTC台北延续发布节奏。</div>
-        <div class="card-comment">芯片路线图即权力路线图</div>
-        <div class="card-source">来源：<a href="https://www.cnbc.com/2026/03/16/nvidia-gtc-2026-ceo-jensen-huang-keynote-blackwell-vera-rubin.html">CNBC</a></div>
-      </div>
-      <div class="news-card cat-ai" onclick="toggleCard(event, this)" data-brand="字节跳动" data-keywords="豆包,付费,Token,商业化">
-        <span class="like-btn" onclick="toggleLike(event,this)">🤍</span>
-        <div class="card-header"><span class="card-num">4</span><span class="card-title">字节豆包拟6月下旬上线付费，3.45亿月活商业化启动</span></div>
-        <div class="card-body">字节豆包月活达3.45亿，日均Token使用量全球第三。付费后将打通抖音电商，形成"AI对话→商品推荐→交易闭环"。</div>
-        <div class="card-comment">3.45亿月活的商业化能力即将被市场定价</div>
-        <div class="card-source">来源：QuestMobile / 媒体报道</div>
+        <div class="card-header"><span class="card-num">2</span><span class="card-title">618商家AI工具激增：数字人日费300元替代5人团队</span></div>
+        <div class="card-body">重庆日报6/18调查显示，今年618使用AI工具的商家数量同比激增。露营卖家实测：传统5人三班直播日费1000元，AI数字人24小时运转仅需不足300元/天，且标准品夜间转化率略优于真人。但51.7%消费者想要"AI帮商家提效后把省下的钱给我"，仅37-48%接受AI直接推荐购买。"平台税"效应令人担忧——商家省下的人力成本可能回流为推广费。</div>
+        <div class="card-comment">消费者要的不是AI卖货，是AI替他们砍价。</div>
+        <div class="card-source">来源：<a href="https://www.cq.gov.cn/ywdt/jrcq/202606/t20260618_15761860_app.html" target="_blank">重庆日报</a></div>
       </div>
     </div>
 
@@ -564,94 +507,49 @@
       <div class="brand-nav">
         <span class="brand-nav-label">🏢 涉及品牌 ▸</span>
         <span class="brand-chip" onclick="scrollToCard('brand',0)">苹果</span>
-        <span class="brand-chip" onclick="scrollToCard('brand',1)">蒙牛</span>
-        <span class="brand-chip" onclick="scrollToCard('brand',2)">TikTok</span>
-        <span class="brand-chip" onclick="scrollToCard('brand',3)">Nike</span>
       </div>
-      <div class="news-card cat-brand" onclick="toggleCard(event, this)" data-brand="Apple" data-keywords="WWDC,Siri AI,Apple Intelligence,iOS 27">
+      <div class="news-card cat-brand" onclick="toggleCard(event, this)" data-brand="苹果" data-keywords="苹果涨价,库克,内存芯片,iPhone18,折叠屏">
         <span class="like-btn" onclick="toggleLike(event,this)">🤍</span>
-        <div class="card-header"><span class="card-num">1</span><span class="card-title">苹果WWDC26发布Siri AI，迟到两年的AI追赶战开打</span></div>
-        <div class="card-body">苹果在WWDC 2026正式发布下一代Apple Intelligence与Siri AI，从语音助手升级为可跨应用执行复杂任务的AI代理，全面接入大模型能力。</div>
-        <div class="card-comment">迟到两年的AI追赶战正式开打</div>
-        <div class="card-source">来源：<a href="https://www.apple.com.cn/newsroom/2026/06/apple-unveils-next-generation-of-apple-intelligence-siri-ai-and-more/">Apple Newsroom</a></div>
-      </div>
-      <div class="news-card cat-brand" onclick="toggleCard(event, this)" data-brand="蒙牛" data-keywords="世界杯,赞助,央视,全链路">
-        <span class="like-btn" onclick="toggleLike(event,this)">🤍</span>
-        <div class="card-header"><span class="card-num">2</span><span class="card-title">蒙牛三度赞助世界杯打全链路营销</span></div>
-        <div class="card-body">蒙牛作为2026美加墨世界杯全球官方赞助商（连续第三届），拿下央视多项核心广告资源，营销策略打通"内容-互动-销售"全链路，同步签约2030世界杯及2027女足世界杯。</div>
-        <div class="card-comment">体育赞助从曝光逻辑转向交易闭环</div>
-        <div class="card-source">来源：<a href="https://finance.sina.com.cn/jjxw/2026-06-17/doc-inictaeq5694709.shtml">新浪财经</a></div>
-      </div>
-      <div class="news-card cat-brand" onclick="toggleCard(event, this)" data-brand="TikTok" data-keywords="合资,Oracle,数据主权,ByteDance">
-        <span class="like-btn" onclick="toggleLike(event,this)">🤍</span>
-        <div class="card-header"><span class="card-num">3</span><span class="card-title">TikTok美版合资Oracle落地，结束六年拉锯</span></div>
-        <div class="card-body">TikTok正式与Oracle等美国投资者达成协议成立新合资实体，ByteDance保留少数股权但交出算法与数据控制权，结束长达六年的法律与政治博弈。美国1.7亿用户不受影响。</div>
-        <div class="card-comment">数据主权争夺的标志性妥协案例</div>
-        <div class="card-source">来源：<a href="https://www.reuters.com/world/china/tiktok-reaches-deal-new-us-joint-venture-avoid-american-ban-2026-01-23/">Reuters</a></div>
-      </div>
-      <div class="news-card cat-brand" onclick="toggleCard(event, this)" data-brand="Nike" data-keywords="裁员,重组,DTC,批发渠道">
-        <span class="like-btn" onclick="toggleLike(event,this)">🤍</span>
-        <div class="card-header"><span class="card-num">4</span><span class="card-title">耐克全球裁员1400人计提3亿美元重组</span></div>
-        <div class="card-body">Nike宣布全球裁员1400人聚焦技术与组织架构调整，计提3亿美元重组费用。系2024年以来持续瘦身计划延续，新CEO推动DTC与批发渠道再平衡。</div>
-        <div class="card-comment">运动巨头用裁员买转型时间窗</div>
-        <div class="card-source">来源：<a href="https://www.reuters.com/sustainability/sustainable-finance-reporting/nike-records-300-million-restructuring-charges-after-recent-layoffs-2026-03-05/">Reuters</a></div>
+        <div class="card-header"><span class="card-num">1</span><span class="card-title">苹果库克确认涨价：内存芯片成本飙升不可持续</span></div>
+        <div class="card-body">新浪财经6/18报道，Tim Cook公开表示苹果将提价，称"价格上涨不可避免"——内存与存储芯片成本飙升已无法继续由公司内部消化。未透露具体时间/幅度/产品线。9月iPhone 18系列预计同期发布，折叠iPhone Ultra因铰链和PCB工艺问题延至2027年初。Counterpoint预测苹果2026年将拿下28%折叠机市场，接近三星。</div>
+        <div class="card-comment">涨价是Tim Cook给供应链的最后通牒——谁先降本谁就是下一个独家。</div>
+        <div class="card-source">来源：<a href="https://finance.sina.com.cn/stock/t/2026-06-18/doc-inicuupz5593431.shtml" target="_blank">新浪财经</a> / <a href="https://tech.tom.com/202606/1284287962.html" target="_blank">TOM科技</a></div>
       </div>
     </div>
 
     <!-- ===== 媒体 ===== -->
     <div class="tab-content" id="tab-media">
       <div class="brand-nav">
-        <span class="brand-nav-label">📱 媒体平台 ▸</span>
-        <span class="brand-chip" onclick="scrollToCard('media',0)">小红书</span>
-        <span class="brand-chip" onclick="scrollToCard('media',1)">视频号</span>
-        <span class="brand-chip" onclick="scrollToCard('media',2)">央视</span>
-        <span class="brand-chip" onclick="scrollToCard('media',3)">Perplexity</span>
-        <span class="brand-chip" onclick="scrollToCard('media',4)">文旅</span>
+        <span class="brand-nav-label">📱 媒体热点 ▸</span>
+        <span class="brand-chip" onclick="scrollToCard('media',0)">铁路</span>
+        <span class="brand-chip" onclick="scrollToCard('media',1)">文旅</span>
       </div>
-      <div class="news-card cat-media" onclick="toggleCard(event, this)" data-brand="小红书" data-keywords="IPO,港交所,高盛,中金">
+      <div class="news-card cat-media" onclick="toggleCard(event, this)" data-brand="铁路" data-keywords="端午,铁路运输,暑期出行,消费活力,假期">
         <span class="like-btn" onclick="toggleLike(event,this)">🤍</span>
-        <div class="card-header"><span class="card-num">1</span><span class="card-title">小红书估值310亿美元秘密递表港交所</span></div>
-        <div class="card-body">小红书计划6月底前秘密向港交所递交IPO申请，估值310亿美元约2200亿元。2026年预计利润达30亿美元，高盛、中金等投行已参与筹备。</div>
-        <div class="card-comment">社区电商估值逻辑的终极验证</div>
-        <div class="card-source">来源：<a href="https://finance.sina.com.cn/stock/marketresearch/2026-06-16/doc-inicrqci7443180.shtml">新浪财经</a></div>
+        <div class="card-header"><span class="card-num">1</span><span class="card-title">全国铁路端午运输启动：流动中国彰显消费活力</span></div>
+        <div class="card-body">央视新闻6/18报道，全国铁路端午假期运输正式启动。铁路+民航齐发力，端午叠加毕业季提前引爆暑期出行。低至200元的机票仍可"捡漏"。预计假期期间旅客流量将再创历史新高。</div>
+        <div class="card-comment">高铁是中国消费的隐形毛细血管——它活跃，一切就活跃。</div>
+        <div class="card-source">来源：<a href="https://news.cctv.com/2026/06/18/ARTI586u325qrvbtX41dbSdd260618.shtml" target="_blank">央视新闻</a> / <a href="https://gd.huaxia.com/c/2026/06/18/2161194.shtml" target="_blank">华夏网</a></div>
       </div>
-      <div class="news-card cat-media" onclick="toggleCard(event, this)" data-brand="微信视频号" data-keywords="GMV,腾讯财报,短视频带货">
+      <div class="news-card cat-media" onclick="toggleCard(event, this)" data-brand="文旅" data-keywords="端午,沉浸式体验,主题出游,文旅升级,深度体验">
         <span class="like-btn" onclick="toggleLike(event,this)">🤍</span>
-        <div class="card-header"><span class="card-num">2</span><span class="card-title">视频号小店GMV增长迅速，营销收入涨20%</span></div>
-        <div class="card-body">据腾讯最新财报，视频号带动营销服务收入同比增长20%，小店GMV增长迅速突破千亿量级。腾讯称商业化仍处"中期阶段"。</div>
-        <div class="card-comment">商业化中期意味着广告库存释放尚有余量</div>
-        <div class="card-source">来源：<a href="https://finance.sina.com.cn/tech/roll/2025-05-14/doc-inewqans0752865.shtml">新浪财经</a> / 亿邦动力</div>
-      </div>
-      <div class="news-card cat-media" onclick="toggleCard(event, this)" data-brand="央视" data-keywords="世界杯,转播权,融媒体,招商">
-        <span class="like-btn" onclick="toggleLike(event,this)">🤍</span>
-        <div class="card-header"><span class="card-num">3</span><span class="card-title">央视启动世界杯广告招商，独家版权锁定</span></div>
-        <div class="card-body">中央广播电视总台5月17日正式启动2026美加墨世界杯赛事广告招商，发布"决胜绿茵之巅"融媒体传播服务方案。版权声明确认独家转播权，方案覆盖电视+央视频+新媒体全链路。</div>
-        <div class="card-comment">世界杯+中国队入围=四年一遇的顶级广告稀缺资源</div>
-        <div class="card-source">来源：<a href="https://1118.cctv.com/2026/05/19/ARTIcCLAOaOwHU6zgnnnhZZm260519.shtml">CCTV</a> / <a href="http://www.eeo.com.cn/2026/0517/880145.shtml">经济观察网</a></div>
-      </div>
-      <div class="news-card cat-media" onclick="toggleCard(event, this)" data-brand="Perplexity" data-keywords="AI搜索,订阅,ARR,信任">
-        <span class="like-btn" onclick="toggleLike(event,this)">🤍</span>
-        <div class="card-header"><span class="card-num">4</span><span class="card-title">Perplexity弃广告转纯订阅，ARR飙至4.5亿美元</span></div>
-        <div class="card-body">Perplexity AI停止广告测试称广告损害AI搜索用户信任。转型纯订阅后ARR一个月跃升50%至4.5亿美元，估值达200亿美元，与Google拥抱AI搜索广告形成鲜明对比。</div>
-        <div class="card-comment">信任溢价>广告变现，AI搜索商业模式分叉点</div>
-        <div class="card-source">来源：<a href="https://www.campaignlive.com/article/perplexity-pulls-plug-ads-citing-trust-concerns-ai/1949142">Campaign Live</a></div>
-      </div>
-      <div class="news-card cat-media" onclick="toggleCard(event, this)" data-brand="文旅" data-keywords="端午,入境游,免签,机票">
-        <span class="like-btn" onclick="toggleLike(event,this)">🤍</span>
-        <div class="card-header"><span class="card-num">5</span><span class="card-title">端午入境游预订增超6倍，民俗体验升温</span></div>
-        <div class="card-body">2026端午假期国内机票预订量超180万张，入境游预订量同比增长超6倍。美团数据显示端午民俗体验走热，龙舟赛带动文体旅融合消费。</div>
-        <div class="card-comment">入境游爆发式增长验证免签政策红利兑现</div>
-        <div class="card-source">来源：<a href="http://sc.people.com.cn/n2/2026/0611/c345167-41607643.html">人民网</a> / <a href="https://www.21jingji.com/article/20260611/herald/359002dbbfd0bf334f41df4e8b89e36d.html">21经济网</a></div>
+        <div class="card-header"><span class="card-num">2</span><span class="card-title">外媒：中国端午沉浸式体验撬动文旅新模式</span></div>
+        <div class="card-body">中国网6/18引述外媒报道，中国端午假期消费正从"观光游"向"沉浸式体验"升级。多地推出主题出游+深度体验新模式，为特定主题出发、为深度体验停留成为新趋势。中国旅游报同日报道"为特定主题出发为深度体验停留"成为新消费口号。</div>
+        <div class="card-comment">游客不再"打卡"了，他们要"入戏"——这才是文旅3.0。</div>
+        <div class="card-source">来源：<a href="http://www.china.com.cn/txt/2026-06/18/content_118555140.shtml" target="_blank">中国网</a> / <a href="https://www.ctnews.com.cn/chanye/content/2026-06/18/content_188681.html" target="_blank">中国旅游报</a></div>
       </div>
     </div>
 
     <!-- ===== 推荐报告 ===== -->
     <div class="tab-content" id="tab-report">
-      <div style="text-align:center;padding:60px 20px;color:var(--text-muted);font-size:0.9em;">本期无推荐报告</div>
+      <div class="report-placeholder">
+        <p style="font-size: 2em; margin-bottom: 12px;">📑</p>
+        <p>本期无推荐报告</p>
+      </div>
     </div>
 
     <footer>
-      <p>数据来源：新华网、21经济网、Reuters、CNBC、证券时报、新浪财经、中国日报网等</p>
+      <p>数据来源：每日经济新闻、证券时报、央视网、新浪财经、重庆日报、中国网等</p>
       <p>QoderWork 自动生成 | 2026-06-18</p>
     </footer>
   </div>
@@ -690,13 +588,11 @@
       else if (e.key === 'ArrowLeft') switchTab((currentTab - 1 + tabs.length) % tabs.length);
       else if (e.key === 'Escape') {
         document.querySelectorAll('.news-card.expanded').forEach(c => c.classList.remove('expanded'));
-        // Reset all filters
         ['ecom','ai','brand','media','report'].forEach(id => resetFilter(id));
       }
     });
 
     function toggleCard(e, card) {
-      // Allow link clicks to pass through
       if (e.target.tagName === 'A' || e.target.closest('a')) return;
       card.classList.toggle('expanded');
     }
@@ -776,7 +672,6 @@
       const url = 'https://oapi.dingtalk.com/robot/send?access_token=' + token
                 + '&timestamp=' + timestamp + '&sign=' + sign;
 
-      // Format as structured text for easy parsing
       const lines = [
         '📊 PREF|' + data.date,
         'ITEMS:' + data.items.map(i => i.brand + ':' + i.title).join('||'),
@@ -791,7 +686,6 @@
       });
 
       try {
-        // Try normal fetch first (works in DingTalk webview)
         const resp = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: body });
         if (resp.ok || resp.type === 'opaque') {
           btn.textContent = '已记录 ✓ 明天将为你优化推荐';
@@ -800,7 +694,6 @@
           throw new Error('not ok');
         }
       } catch (e) {
-        // Fallback: no-cors mode (request still sent, just can't read response)
         try {
           await fetch(url, { method: 'POST', mode: 'no-cors', body: body });
         } catch(e2) {}
@@ -819,7 +712,6 @@
       const container = document.getElementById('tab-' + tabId);
       const cards = container.querySelectorAll('.news-card');
       
-      // Remove no-filter from all, apply dimmed/highlighted states
       cards.forEach((card, i) => {
         card.classList.remove('no-filter', 'highlighted', 'expanded');
         if (i === index) {
@@ -827,7 +719,6 @@
         }
       });
 
-      // Update brand chips active state
       const chips = container.querySelectorAll('.brand-chip');
       chips.forEach((chip, i) => {
         chip.style.opacity = i === index ? '1' : '0.5';
@@ -839,7 +730,6 @@
       }
     }
 
-    // Reset filter when clicking on active chip again or pressing Escape
     function resetFilter(tabId) {
       const container = document.getElementById('tab-' + tabId);
       if (!container) return;
@@ -878,7 +768,6 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-      // Set initial state: all cards in no-filter mode
       document.querySelectorAll('.news-card').forEach(c => c.classList.add('no-filter'));
       animateCards(document.querySelector('.tab-content.active'));
     });
