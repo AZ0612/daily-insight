@@ -653,17 +653,89 @@
       card.style.animationDelay = (i * 0.05) + 's';
     });
 
-    // 拦截所有外链点击：强制新窗口打开，防止当前页被替换（钉钉webview无返回键）
-    document.addEventListener('click', function(e) {
-      var link = e.target.closest('a[href]');
-      if (!link) return;
-      var href = link.getAttribute('href');
-      if (href && href.startsWith('http') && !href.includes(location.hostname)) {
-        e.preventDefault();
-        e.stopPropagation();
-        window.open(href, '_blank');
+    // === 钉钉webview外链解决方案 ===
+    // 钉钉webview会拦截target=_blank和window.open，均导致当前页跳走无法返回
+    // 方案：弹出in-page modal展示链接，用户可复制后在浏览器打开
+
+    // 创建modal DOM
+    (function() {
+      var overlay = document.createElement('div');
+      overlay.id = 'link-modal-overlay';
+      overlay.innerHTML = '<div id="link-modal">' +
+        '<div id="link-modal-title">外部链接</div>' +
+        '<div id="link-modal-desc">钉钉内无法直接跳转，请复制链接到浏览器打开</div>' +
+        '<input id="link-modal-url" type="text" readonly />' +
+        '<div id="link-modal-btns">' +
+          '<button id="link-modal-copy">复制链接</button>' +
+          '<button id="link-modal-close">关闭</button>' +
+        '</div>' +
+        '<div id="link-modal-toast" style="display:none">✓ 已复制</div>' +
+      '</div>';
+      document.body.appendChild(overlay);
+
+      // 注入样式
+      var style = document.createElement('style');
+      style.textContent = '#link-modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.55);z-index:99999;align-items:center;justify-content:center}' +
+        '#link-modal-overlay.active{display:flex}' +
+        '#link-modal{background:#fff;border-radius:12px;padding:24px 20px;width:88%;max-width:340px;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,.18)}' +
+        '#link-modal-title{font-size:16px;font-weight:600;margin-bottom:8px;color:#1a1a1a}' +
+        '#link-modal-desc{font-size:13px;color:#666;margin-bottom:16px}' +
+        '#link-modal-url{width:100%;padding:10px 12px;border:1px solid #e0e0e0;border-radius:8px;font-size:12px;color:#333;background:#f8f8f8;box-sizing:border-box;margin-bottom:16px;-webkit-user-select:all;user-select:all}' +
+        '#link-modal-btns{display:flex;gap:10px}' +
+        '#link-modal-btns button{flex:1;padding:10px 0;border:none;border-radius:8px;font-size:14px;font-weight:500;cursor:pointer}' +
+        '#link-modal-copy{background:#1677ff;color:#fff}' +
+        '#link-modal-copy:active{background:#0958d9}' +
+        '#link-modal-close{background:#f0f0f0;color:#333}' +
+        '#link-modal-close:active{background:#e0e0e0}' +
+        '#link-modal-toast{margin-top:12px;color:#52c41a;font-size:13px;font-weight:500}';
+      document.head.appendChild(style);
+
+      var overlayEl = document.getElementById('link-modal-overlay');
+      var urlInput = document.getElementById('link-modal-url');
+      var copyBtn = document.getElementById('link-modal-copy');
+      var closeBtn = document.getElementById('link-modal-close');
+      var toast = document.getElementById('link-modal-toast');
+
+      function showModal(url) {
+        urlInput.value = url;
+        toast.style.display = 'none';
+        copyBtn.textContent = '复制链接';
+        overlayEl.classList.add('active');
       }
-    }, true);
+      function hideModal() {
+        overlayEl.classList.remove('active');
+      }
+
+      copyBtn.addEventListener('click', function() {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(urlInput.value).then(function() {
+            toast.style.display = 'block';
+            copyBtn.textContent = '已复制 ✓';
+          });
+        } else {
+          urlInput.select();
+          document.execCommand('copy');
+          toast.style.display = 'block';
+          copyBtn.textContent = '已复制 ✓';
+        }
+      });
+      closeBtn.addEventListener('click', hideModal);
+      overlayEl.addEventListener('click', function(e) {
+        if (e.target === overlayEl) hideModal();
+      });
+
+      // 拦截所有外链点击
+      document.addEventListener('click', function(e) {
+        var link = e.target.closest('a[href]');
+        if (!link) return;
+        var href = link.getAttribute('href');
+        if (href && href.startsWith('http') && !href.includes(location.hostname)) {
+          e.preventDefault();
+          e.stopPropagation();
+          showModal(href);
+        }
+      }, true);
+    })();
   </script>
 </body>
 </html>
