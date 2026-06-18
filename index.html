@@ -652,6 +652,18 @@
     document.querySelectorAll('.news-card').forEach((card, i) => {
       card.style.animationDelay = (i * 0.05) + 's';
     });
+
+    // 拦截所有外链点击：强制新窗口打开，防止当前页被替换（钉钉webview无返回键）
+    document.addEventListener('click', function(e) {
+      var link = e.target.closest('a[href]');
+      if (!link) return;
+      var href = link.getAttribute('href');
+      if (href && href.startsWith('http') && !href.includes(location.hostname)) {
+        e.preventDefault();
+        e.stopPropagation();
+        window.open(href, '_blank');
+      }
+    }, true);
   </script>
 </body>
 </html>
