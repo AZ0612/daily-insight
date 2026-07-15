@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>每日行业洞察 | 2026-07-14</title>
+  <title>每日行业洞察 | 2026-07-15</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -38,46 +38,45 @@
     }
     .header .date { color: var(--text-muted); font-size: 0.88em; margin-top: 6px; }
 
-    /* ===== ECOM HERO (dark red) ===== */
+    /* ===== WORLD CUP HERO ===== */
     .world-cup-hero {
-      background: linear-gradient(135deg, #2d0a0a 0%, #4a1010 30%, #3d0d0d 60%, #1f0707 100%);
+      background: linear-gradient(135deg, #0f3d1e 0%, #1a5c30 30%, #145228 60%, #0a2e14 100%);
       border-radius: 20px; padding: 32px 36px; margin-bottom: 32px;
-      border: 1px solid rgba(239,68,68,0.25);
+      border: 1px solid rgba(34,197,94,0.25);
       position: relative; overflow: hidden;
       animation: fadeInUp 0.7s ease-out 0.2s both;
       cursor: pointer; transition: transform 0.3s, box-shadow 0.3s;
     }
     .world-cup-hero:hover {
       transform: translateY(-3px);
-      box-shadow: 0 20px 60px rgba(239,68,68,0.2);
+      box-shadow: 0 20px 60px rgba(34,197,94,0.2);
     }
     .world-cup-hero::before {
       content: ''; position: absolute; top: -40%; right: -10%; width: 280px; height: 280px;
-      background: radial-gradient(circle, rgba(251,146,60,0.14) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(251,191,36,0.12) 0%, transparent 70%);
       animation: float 6s ease-in-out infinite;
     }
     .world-cup-hero::after {
-      content: '🛒'; position: absolute; top: 20px; right: 30px; font-size: 3.5em;
-      opacity: 0.22; animation: float 8s ease-in-out infinite;
+      content: '⚽'; position: absolute; top: 20px; right: 30px; font-size: 3.5em;
+      opacity: 0.25; animation: spin 20s linear infinite;
     }
     @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
     @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
 
     .wc-badge {
       display: inline-flex; align-items: center; gap: 6px;
-      background: rgba(251,146,60,0.2); border: 1px solid rgba(251,146,60,0.4);
+      background: rgba(251,191,36,0.2); border: 1px solid rgba(251,191,36,0.4);
       padding: 4px 14px; border-radius: 20px; font-size: 0.74em; font-weight: 700;
-      color: #fdba74; margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.05em;
+      color: #fbbf24; margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.05em;
     }
     .wc-title { font-size: 1.3em; font-weight: 700; color: #fff; margin-bottom: 12px; line-height: 1.4; position: relative; z-index: 1; }
     .wc-body { font-size: 0.9em; color: rgba(255,255,255,0.85); line-height: 1.8; position: relative; z-index: 1; }
     .wc-comment {
       margin-top: 14px; padding: 10px 14px; background: rgba(0,0,0,0.3);
-      border-left: 3px solid #fb923c; border-radius: 0 8px 8px 0;
-      font-size: 0.84em; color: #fed7aa; position: relative; z-index: 1;
+      border-left: 3px solid #fbbf24; border-radius: 0 8px 8px 0;
+      font-size: 0.84em; color: #fde68a; position: relative; z-index: 1;
     }
     .wc-source { margin-top: 10px; font-size: 0.74em; color: rgba(255,255,255,0.5); position: relative; z-index: 1; }
-    .wc-source a { color: rgba(253,186,116,0.75); text-decoration: none; }
 
     /* ===== TAB NAV ===== */
     .tab-nav {
@@ -112,7 +111,6 @@
     .tab-btn[data-tab="brand"].active { background: rgba(249,115,22,0.2); color: #fdba74; box-shadow: 0 0 16px rgba(249,115,22,0.25); }
     .tab-btn[data-tab="ecom"].active { background: rgba(168,85,247,0.2); color: #d8b4fe; box-shadow: 0 0 16px rgba(168,85,247,0.25); }
     .tab-btn[data-tab="media"].active { background: rgba(0,47,167,0.25); color: #93c5fd; box-shadow: 0 0 16px rgba(0,47,167,0.3); }
-    .tab-btn[data-tab="report"].active { background: rgba(16,185,129,0.2); color: #6ee7b7; box-shadow: 0 0 16px rgba(16,185,129,0.25); }
 
     /* Tab icon animations */
     .tab-icon { display: inline-block; }
@@ -252,8 +250,6 @@
       max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.3s ease 0.12s, opacity 0.3s 0.12s;
     }
     .news-card.expanded .card-source { max-height: 30px; opacity: 1; }
-    .card-source a { color: var(--text-secondary); text-decoration: none; border-bottom: 1px dotted rgba(255,255,255,0.3); }
-    .card-source a:hover { color: #fff; }
 
     .expand-hint {
       position: absolute; top: 24px; right: 22px; font-size: 0.72em; color: var(--text-muted);
@@ -383,9 +379,6 @@
     #tab-media .brand-chip { background: rgba(0,47,167,0.12); border-color: rgba(59,130,246,0.3); color: #93c5fd; }
     #tab-media .brand-chip:hover { background: rgba(0,47,167,0.25); border-color: rgba(59,130,246,0.5); }
 
-    /* Report tab */
-    .report-empty { text-align: center; padding: 60px 20px; color: var(--text-muted); font-size: 0.95em; }
-
     /* Footer */
     footer {
       margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.06);
@@ -434,16 +427,20 @@
   <div class="container">
     <header class="header">
       <h1>每日行业洞察</h1>
-      <p class="date">2026/7/14 星期二 · 18条精选</p>
+      <p class="date">2026/7/15 星期三 · 15条精选</p>
     </header>
 
-    <!-- Ecom Hero (置顶) -->
-    <div class="world-cup-hero" onclick="this.classList.toggle('wc-expanded')">
-      <div class="wc-badge">🛒 电商 · PROMO TODAY</div>
-      <div class="wc-title">淘宝闪购日单破1.5亿追平美团，阿里即时零售艰难爬坡</div>
-      <div class="wc-body">7月14日媒体披露：淘宝闪购日订单量已从上月8000万升至约1.5亿单，逼近美团外卖水平。阿里将即时零售升格为淘宝天猫核心战略支柱后，通过百亿补贴和骑手扩容打法追赶。市监总局6月底已就补贴战约谈美团、淘宝闪购、京东外卖三方。</div>
-      <div class="wc-comment">💬 补贴逼平订单量易，逼平LTV难，阿里的关键考验才刚开始</div>
-      <div class="wc-source">来源：<a href="https://www.nbd.com.cn/articles/2025-07-14/3943745.html">每经</a> / <a href="https://www.stcn.com/article/detail/3967207.html">证券时报</a></div>
+    <!-- Hero (置顶) - AI/科技 紫色主题 -->
+    <style>
+      .world-cup-hero.hero-tech::after { content: '🚀'; }
+      .world-cup-hero.hero-tech::before { background: radial-gradient(circle, rgba(168,85,247,0.18) 0%, transparent 70%); }
+    </style>
+    <div class="world-cup-hero hero-tech" style="background: linear-gradient(135deg, #0a0f2e 0%, #1a1450 30%, #2d1b69 60%, #0a0820 100%); border-color: rgba(168,85,247,0.3);" onclick="this.classList.toggle('wc-expanded')">
+      <div class="wc-badge" style="background: rgba(168,85,247,0.2); border-color: rgba(168,85,247,0.4); color: #d8b4fe;">🚀 AI · 融资纪录 TODAY</div>
+      <div class="wc-title">月之暗面（KIMI）完成136.22亿元D轮融资，估值达1362亿元，刷新中国大模型单笔融资纪录</div>
+      <div class="wc-body">KIMI宣布完成136.22亿元人民币D轮融资，创下中国大模型领域单笔融资纪录。本轮由美团龙珠领投，中国移动、中信产业基金、水木资本等机构共同参与，融资完成后公司估值达到1362.25亿元。对投资机构而言，押注的不只是一款AI应用，而是一支能持续推出下一代模型和新技术方案的研发团队——KIMI正把重心押向生产力赛道。</div>
+      <div class="wc-comment" style="border-left-color:#a855f7; color:#d8b4fe; background:rgba(168,85,247,0.1);">💬 美团龙珠领投耐人寻味：即时零售巨头重仓大模型，AI与本地生活/电商的入口之争正提前打响</div>
+      <div class="wc-source">来源：<a href="http://mp.weixin.qq.com/s?__biz=MzU0Mjk1NDY3MA==&mid=2247512706&idx=2&sn=47b28aad9de93ef5f5b6f9ef1ea58b30">雷科技·AI商业洞察</a> / BMR商业评论</div>
     </div>
 
     <!-- Tabs -->
@@ -452,45 +449,44 @@
       <button class="tab-btn" data-tab="brand"><span class="tab-icon">👑</span> 头部品牌</button>
       <button class="tab-btn" data-tab="ecom"><span class="tab-icon">💰</span> 电商</button>
       <button class="tab-btn" data-tab="media"><span class="tab-icon">🔥</span> 媒体</button>
-      <button class="tab-btn" data-tab="report"><span class="tab-icon">📚</span> 推荐报告</button>
     </div>
 
     <!-- ===== AI / 科技 ===== -->
     <div class="tab-content active" id="tab-ai">
       <div class="brand-nav">
         <span class="brand-nav-label">🤖 科技公司 ▸</span>
-        <span class="brand-chip" onclick="scrollToCard('ai',0)">阶跃星辰</span>
-        <span class="brand-chip" onclick="scrollToCard('ai',1)">Anthropic</span>
-        <span class="brand-chip" onclick="scrollToCard('ai',2)">SK海力士</span>
-        <span class="brand-chip" onclick="scrollToCard('ai',3)">长鑫存储</span>
+        <span class="brand-chip" onclick="scrollToCard('ai',0)">月之暗面KIMI</span>
+        <span class="brand-chip" onclick="scrollToCard('ai',1)">WAIC 2026</span>
+        <span class="brand-chip" onclick="scrollToCard('ai',2)">荣耀×阿里</span>
+        <span class="brand-chip" onclick="scrollToCard('ai',3)">DeepSeek</span>
       </div>
-      <div class="news-card cat-ai" onclick="toggleCard(event, this)" data-brand="阶跃星辰" data-keywords="阶跃星辰,AI手机,智能体OS,Step AOS">
+      <div class="news-card cat-ai" onclick="toggleCard(event, this)" data-brand="月之暗面" data-keywords="KIMI,大模型,融资,估值,美团">
         <span class="like-btn" onclick="toggleLike(event,this)">🤍</span>
-        <div class="card-header"><span class="card-num">1</span><span class="card-title">阶跃星辰发布全球首个AI智能体OS Step AOS+STEPX Neo手机</span></div>
-        <div class="card-body">7月13日晚阶跃星辰在上海发布智能体原生操作系统Step AOS、个人智能体阶跃Amoo及大模型原生AI终端STEPX Neo，成为全球首个AI智能体原生操作系统。首批生态含支付宝、百度、美团、京东、滴滴、携程、高德，通过协议接口而非GUI调用。印奇：中国大模型商业化不必走coding路径，押注软硬一体探索To C闭环。</div>
-        <div class="card-comment">AI+终端硬件+OS三线全栈开卷，阶跃想在苹果/华为的地盘杀出条血路</div>
-        <div class="card-source">来源：<a href="https://companies.caixin.com/2026-07-14/102464046.html">财新</a> / <a href="https://wallstreetcn.com/articles/3776813">华尔街见闻</a></div>
+        <div class="card-header"><span class="card-num">1</span><span class="card-title">月之暗面KIMI完成136.22亿元D轮融资，估值1362亿创中国大模型单笔纪录</span></div>
+        <div class="card-body">本轮由美团龙珠领投，中国移动、中信产业基金、水木资本等机构参与，融资完成后估值达1362.25亿元，刷新中国大模型领域单笔融资纪录。资本押注的不仅是KIMI应用，更是其持续迭代下一代模型的研发能力，KIMI正加码生产力赛道。</div>
+        <div class="card-comment">美团重仓大模型，即时零售巨头下注AI，入口之争提前打响</div>
+        <div class="card-source">来源：<a href="http://mp.weixin.qq.com/s?__biz=MzU0Mjk1NDY3MA==&mid=2247512706&idx=2&sn=47b28aad9de93ef5f5b6f9ef1ea58b30">雷科技·AI商业洞察</a> / BMR商业评论</div>
       </div>
-      <div class="news-card cat-ai" onclick="toggleCard(event, this)" data-brand="Anthropic" data-keywords="Anthropic,Claude Science,AI4Science,科研">
+      <div class="news-card cat-ai" onclick="toggleCard(event, this)" data-brand="WAIC" data-keywords="世界人工智能大会,镇馆之宝,全球首发,上海">
         <span class="like-btn" onclick="toggleLike(event,this)">🤍</span>
-        <div class="card-header"><span class="card-num">2</span><span class="card-title">Anthropic推Claude Science工作台，AI直插科研全流程</span></div>
-        <div class="card-body">Anthropic 7月14日推出面向科学家的Claude Science工作台，覆盖文献综述、假设生成、实验设计、数据分析全流程。OpenAI同步推GeneBench-Pro测试基因组学任务，谷歌从AlphaFold走向药物设计。三巨头齐向AI4Science转向，AI从助手升级为科研合作者。</div>
-        <div class="card-comment">Claude Fable延期而Science产品线开花，Anthropic选择在垂直科研赛道躲开OpenAI正面</div>
-        <div class="card-source">来源：<a href="https://www.anthropic.com/news/claude-science-ai-workbench">Anthropic</a> / <a href="https://www.tmtpost.com/agent/ai-article?id=18772">钛媒体</a></div>
+        <div class="card-header"><span class="card-num">2</span><span class="card-title">WAIC 2026十大"镇馆之宝"公布：展览超10万㎡、1100家企业、300+全球首发</span></div>
+        <div class="card-body">2026世界人工智能大会将于7月17日至20日在上海世博、张江、西岸"三地四馆"举行。本届展览总面积首次突破10万平方米，1100余家企业参展、3000余项展品集中亮相，超300款产品全球首发，组委会7月15日正式公布十大镇馆之宝。</div>
+        <div class="card-comment">规模再破纪录，中国AI从"跟跑"进入"造场"阶段，产业话语权上移</div>
+        <div class="card-source">来源：<a href="http://mp.weixin.qq.com/s?__biz=MjM5MzI5NTU3MQ==&mid=2652551218&idx=2&sn=a8d6b71d9b0e4118bc331c254e23bf2b">澎湃新闻</a></div>
       </div>
-      <div class="news-card cat-ai" onclick="toggleCard(event, this)" data-brand="SK海力士" data-keywords="SK海力士,AI芯片,存储,超级周期">
+      <div class="news-card cat-ai" onclick="toggleCard(event, this)" data-brand="荣耀/阿里" data-keywords="AI智能体,终端,合作,WAIC,多模态">
         <span class="like-btn" onclick="toggleLike(event,this)">🤍</span>
-        <div class="card-header"><span class="card-num">3</span><span class="card-title">SK海力士两日暴跌超20%，AI芯片超级周期现裂缝</span></div>
-        <div class="card-body">7月14日SK海力士A股一度下跌9%，两日累计跌超20%，创纪录单日15%暴跌，韩国Kospi一度跌5.3%。强制平仓比率上周升破10%，散户单日抛售17亿美元。市场担忧AI芯片产能过剩，兆易创新A股跌停，存储板块集体重挫。CLSA称韩国已成为AI景气风向标。</div>
-        <div class="card-comment">超级周期第一次出现集体信仰崩塌，AI硬件的高估值滤镜正在快速褪色</div>
-        <div class="card-source">来源：<a href="https://finance.sina.com.cn/stock/usstock/c/2026-07-14/doc-inihtvuk5379190.shtml">新浪财经</a> / <a href="https://wallstreetcn.com/articles/3776841">华尔街见闻</a></div>
+        <div class="card-header"><span class="card-num">3</span><span class="card-title">荣耀与阿里将开展AI智能体终端合作，7月18日WAIC分论坛揭晓</span></div>
+        <div class="card-body">荣耀将于7月18日在WAIC 2026举办"从数字屏幕到具身智能"分论坛，阿里巴巴集团副总裁、Token Foundry多模态交互负责人许主洪确认加入。据接近双方渠道消息，荣耀与阿里将在AI智能体终端层面展开合作，引发业界对端侧智能体落地的想象。</div>
+        <div class="card-comment">端侧智能体是入口卡位战，手机厂商×大模型平台的绑定正在加速</div>
+        <div class="card-source">来源：<a href="http://mp.weixin.qq.com/s?__biz=MzU0Mjk1NDY3MA==&mid=2247512706&idx=4&sn=bdba549a2c26bc3f663e0722079860ad">AI商业洞察</a></div>
       </div>
-      <div class="news-card cat-ai" onclick="toggleCard(event, this)" data-brand="长鑫存储" data-keywords="长鑫存储,IPO,DRAM,科创板">
+      <div class="news-card cat-ai" onclick="toggleCard(event, this)" data-brand="DeepSeek" data-keywords="IPO,上市,AI推理芯片,自研">
         <span class="like-btn" onclick="toggleLike(event,this)">🤍</span>
-        <div class="card-header"><span class="card-num">4</span><span class="card-title">长鑫存储科创板IPO募资295亿，7/27挂牌位居历史第二</span></div>
-        <div class="card-body">7月14日消息：长鑫存储7月9日披露招股意向书，确定7月16日新股申购，7月27日挂牌上交所科创板。募资总额295亿元，规模位居科创板历史第二，仅次于中芯国际。资金用于存储器晶圆制造产线升级、DRAM技术迭代及前沿技术研发。</div>
-        <div class="card-comment">国产DRAM关键一站，与SK海力士暴跌形成鲜明对比，中国存储链自主化进入兑现期</div>
-        <div class="card-source">来源：<a href="https://www.guandian.cn/article/20260714/573248.html">观点网</a></div>
+        <div class="card-header"><span class="card-num">4</span><span class="card-title">DeepSeek筹备IPO目标2027年国内上市，同步自研AI推理芯片</span></div>
+        <div class="card-body">据外媒报道，DeepSeek已开始筹备IPO、计划国内上市，目标2027年挂牌，正与会计师事务所和银行顾问洽谈，拟今年底前完成财报。与此同时，其自研AI推理芯片项目"始于一年前"，仍处早期，消息传出当日英伟达盘前一度下跌约2%。</div>
+        <div class="card-comment">上市+造芯双线并进，国产大模型头部开始补齐"资本+算力"底座</div>
+        <div class="card-source">来源：<a href="https://www.donews.com/article/detail/6885/104252.html">DoNews</a> / <a href="https://news.qq.com/rain/a/20260715A08NHQ00">腾讯新闻</a></div>
       </div>
     </div>
 
@@ -498,38 +494,38 @@
     <div class="tab-content" id="tab-brand">
       <div class="brand-nav">
         <span class="brand-nav-label">🏢 涉及品牌 ▸</span>
-        <span class="brand-chip" onclick="scrollToCard('brand',0)">蒙牛/海信</span>
-        <span class="brand-chip" onclick="scrollToCard('brand',1)">泡泡玛特</span>
-        <span class="brand-chip" onclick="scrollToCard('brand',2)">苹果</span>
-        <span class="brand-chip" onclick="scrollToCard('brand',3)">车企</span>
+        <span class="brand-chip" onclick="scrollToCard('brand',0)">海南/新能源车</span>
+        <span class="brand-chip" onclick="scrollToCard('brand',1)">中科曙光</span>
+        <span class="brand-chip" onclick="scrollToCard('brand',2)">旷视科技</span>
+        <span class="brand-chip" onclick="scrollToCard('brand',3)">电力设备</span>
       </div>
-      <div class="news-card cat-brand" onclick="toggleCard(event, this)" data-brand="蒙牛" data-keywords="蒙牛,海信,世界杯,品牌联合">
+      <div class="news-card cat-brand" onclick="toggleCard(event, this)" data-brand="海南" data-keywords="禁售燃油车,新能源,2030,政策">
         <span class="like-btn" onclick="toggleLike(event,this)">🤍</span>
-        <div class="card-header"><span class="card-num">1</span><span class="card-title">蒙牛×海信联手世界杯围挡广告互动，中国品牌抱团玩法升级</span></div>
-        <div class="card-body">7月14日媒体披露：蒙牛与海信在美加墨世界杯期间发起围挡广告互动，是中国品牌首次在世界杯场景以生态联盟形式做联合传播，突破单品牌打卡模式。业内认为这标志中国世界杯营销从砸钱占位进入生态互撬新阶段。</div>
-        <div class="card-comment">赞助商联合玩法在中国品牌里首次出现，海信借足球做3C渠道，蒙牛借海信品牌做全球化</div>
-        <div class="card-source">来源：<a href="https://m.sohu.com/a/1050135057_392415">搜狐财经</a></div>
+        <div class="card-header"><span class="card-num">1</span><span class="card-title">海南发布"十五五"规划，明确2030年禁售燃油车，将成全国首个全域禁燃省份</span></div>
+        <div class="card-body">海南省政府发布《美丽海南建设"十五五"规划》，提出"平稳推进2030年禁售燃油车"，海南将成为我国第一个全域禁售燃油车的省份，为全国交通绿色转型提供先行样板。七年铺垫落地，燃油存量车仍可使用、过户，新增销售端将逐步收紧。</div>
+        <div class="card-comment">首个省级禁燃时间表落地，新能源车企迎确定性增量、油车残值承压</div>
+        <div class="card-source">来源：<a href="https://www.36kr.com/p/3896438010676873">36氪</a></div>
       </div>
-      <div class="news-card cat-brand" onclick="toggleCard(event, this)" data-brand="泡泡玛特" data-keywords="泡泡玛特,LABUBU,潮玩,IP电影">
+      <div class="news-card cat-brand" onclick="toggleCard(event, this)" data-brand="中科曙光" data-keywords="十万卡,AI超集群,算力,国产">
         <span class="like-btn" onclick="toggleLike(event,this)">🤍</span>
-        <div class="card-header"><span class="card-num">2</span><span class="card-title">泡泡玛特LABUBU大电影启动，《柏灵顿》导演掌舵索尼合作</span></div>
-        <div class="card-body">泡泡玛特与索尼影业合作的LABUBU真人动画电影正式启动，由《柏灵顿》《旺卡》导演Paul King执导。此举是LABUBU首个百亿级IP的内容纵深化关键动作，2026年一季度LABUBU销售回落但仍是泡泡玛特核心，全年销量已超1亿只。</div>
-        <div class="card-comment">潮玩IP向影视迈的第一步，是判断泡泡玛特再造迪士尼叙事是否成立的关键测试</div>
-        <div class="card-source">来源：<a href="https://www.bbc.com/zhongwen/articles/cr5l5ymljn6o/simp">BBC中文</a> / <a href="https://www.tmtpost.com/7921481.html">钛媒体</a></div>
+        <div class="card-header"><span class="card-num">2</span><span class="card-title">中科曙光"曙光8000（登峰）"落成：中国首个全国产十万卡AI超集群，接入国家超算互联网</span></div>
+        <div class="card-body">在光合组织2026智能计算应用大会期间，中科曙光宣布我国首个全国产十万卡AI超集群"曙光8000（登峰）"正式落成并接入国家超算互联网，标志AI基础设施从万卡级迈向十万卡级部署，面向高并发、多精度复合负载支撑大模型与智能体训练。</div>
+        <div class="card-comment">算力从万卡到十万卡是量级跃迁，国产替代在AI底座层加速兑现</div>
+        <div class="card-source">来源：<a href="https://news.qq.com/rain/a/20260715A08EL200">腾讯新闻</a> / 中国政府采购报</div>
       </div>
-      <div class="news-card cat-brand" onclick="toggleCard(event, this)" data-brand="苹果" data-keywords="苹果,iPhone Fold,折叠屏,量产">
+      <div class="news-card cat-brand" onclick="toggleCard(event, this)" data-brand="旷视科技" data-keywords="AI四小龙,退场,独角兽,反思">
         <span class="like-btn" onclick="toggleLike(event,this)">🤍</span>
-        <div class="card-header"><span class="card-num">3</span><span class="card-title">苹果首款折叠iPhone确认7月下旬量产，2026年秋发布</span></div>
-        <div class="card-body">7月14日多方消息：苹果首款可折叠iPhone确认7月下旬进入量产阶段，将于2026年秋季正式发布，主打无折痕钛合金铰链方案。同时iPhone 18 Pro与Fold同步量产，起售价预计超2000美元。折叠iPhone将拉动整个安卓折叠屏市场再次跟进升级。</div>
-        <div class="card-comment">苹果入局是折叠屏市场从少数派走向主流的信号弹，Vivo/华为面临被降维打击风险</div>
-        <div class="card-source">来源：<a href="https://www.ithome.com/0/968/020.htm">IT之家</a> / <a href="https://mobile.zol.com.cn/1136/11363976.html">中关村在线</a></div>
+        <div class="card-header"><span class="card-num">3</span><span class="card-title">"AI四小龙"旷视科技走向落幕，百亿估值未换来IPO引行业反思</span></div>
+        <div class="card-body">曾挂着"AI四小龙"招牌的旷视科技旧总部如今门可罗雀，创始团队各奔前程。文章复盘：在AI赛道，公司可能是消耗品，但人是资产——140亿投入未必买来一个IPO，却可能买来创始人下一次创业的"优先认购权"。</div>
+        <div class="card-comment">上一代CV独角兽退潮，大模型时代重写AI公司的估值与生存逻辑</div>
+        <div class="card-source">来源：<a href="https://www.tmtpost.com/8065965.html">钛媒体</a></div>
       </div>
-      <div class="news-card cat-brand" onclick="toggleCard(event, this)" data-brand="汽车集团" data-keywords="燃油车,新势力,销量,半年考">
+      <div class="news-card cat-brand" onclick="toggleCard(event, this)" data-brand="电力设备" data-keywords="变压器,AI算力,出口,电力">
         <span class="like-btn" onclick="toggleLike(event,this)">🤍</span>
-        <div class="card-header"><span class="card-num">4</span><span class="card-title">7大燃油车企集团半年考全军覆没，蔚小理小米新势力抢跑</span></div>
-        <div class="card-body">7月14日国内车市半年考数据披露：7大传统燃油车企集团上半年年度目标完成率无一超过40%，燃油车销量崩塌加速。同期新势力表现分化，小鹏率先跨过年度目标40%线，蔚来Q1垫底，小米SU7 Ultra月销回落至45辆。行业分化更趋极端。</div>
-        <div class="card-comment">燃油车集团正式进入卖一辆亏一辆的存量清算期，营销预算被迫向新能源系倾斜</div>
-        <div class="card-source">来源：<a href="https://news.qq.com/rain/a/20260714A03K8L00">腾讯新闻</a> / <a href="https://www.cls.cn/detail/2084635">财联社</a></div>
+        <div class="card-header"><span class="card-num">4</span><span class="card-title">AI浪潮带火中国电力设备：变压器相关企业超14万家，上半年山东电工出口+9.3%</span></div>
+        <div class="card-body">央视财经消息，今年全球货物贸易增长主要集中于人工智能相关领域，全球算力、数据中心及终端设备需求扩张，带动我国变压器等电力设备出口。上半年山东省电工器材出口货值267.3亿元、同比增9.3%，其中变电站与变压器产品出口超70亿元；截至7月15日国内现存变压器企业14万余家、超四成在华东。</div>
+        <div class="card-comment">AI基建的隐形赢家：算力狂潮沿产业链外溢到中国电力装备制造</div>
+        <div class="card-source">来源：<a href="https://news.qq.com/rain/a/20260715A08GNF00">央视财经 / 腾讯新闻</a></div>
       </div>
     </div>
 
@@ -537,46 +533,38 @@
     <div class="tab-content" id="tab-ecom">
       <div class="brand-nav">
         <span class="brand-nav-label">🛒 电商动态 ▸</span>
-        <span class="brand-chip" onclick="scrollToCard('ecom',0)">淘宝直播</span>
-        <span class="brand-chip" onclick="scrollToCard('ecom',1)">抖音电商</span>
-        <span class="brand-chip" onclick="scrollToCard('ecom',2)">京东</span>
-        <span class="brand-chip" onclick="scrollToCard('ecom',3)">海关总署</span>
-        <span class="brand-chip" onclick="scrollToCard('ecom',4)">消费规划</span>
+        <span class="brand-chip" onclick="scrollToCard('ecom',0)">共享单车</span>
+        <span class="brand-chip" onclick="scrollToCard('ecom',1)">苏州外卖</span>
+        <span class="brand-chip" onclick="scrollToCard('ecom',2)">顺丰同城</span>
+        <span class="brand-chip" onclick="scrollToCard('ecom',3)">低空经济</span>
       </div>
-      <div class="news-card cat-ecom" onclick="toggleCard(event, this)" data-brand="淘宝" data-keywords="淘宝直播,打赏新规,主播合规,内容治理">
+      <div class="news-card cat-ecom" onclick="toggleCard(event, this)" data-brand="美团/青桔/哈啰" data-keywords="共享单车,调价,起步价,本地生活">
         <span class="like-btn" onclick="toggleLike(event,this)">🤍</span>
-        <div class="card-header"><span class="card-num">1</span><span class="card-title">淘宝直播打赏新规7/13落地：违规主播禁开打赏，停权时长2-3倍</span></div>
-        <div class="card-body">淘宝直播上线新版打赏管理规则：近90天有严重违规记录的账号无法申请打赏功能；已开通打赏的主播被限播后，打赏权限同步停权，停权时长为限播期的2-3倍；禁止承诺返利、PK定惩罚、卖惨立人设等诱导打赏。该新规落地中央网信办4月发文，抖快去年已改完规则，淘宝跟进。</div>
-        <div class="card-comment">打赏营收占比不到5%，改规则政治正确大于商业冲击，主要清理低质主播圈</div>
-        <div class="card-source">来源：<a href="https://m.21jingji.com/article/20260714/herald/d19bc810b6b39589ffaffb9b21869418.html">21财经</a></div>
+        <div class="card-header"><span class="card-num">1</span><span class="card-title">美团、青桔、哈啰共享单车集体调价：起步价普遍升至1.88-1.99元/60分钟</span></div>
+        <div class="card-body">近期美团单车、滴滴青桔、哈啰单车相继在北京等多个城市上调计费规则，三家不约而同采取"提高起步定价、拉长基础骑行时长"组合：起步价从此前约1.5元/30分钟，普遍调整为1.88-1.99元/60分钟，成为行业近年来较大范围的一次集体调价，部分城市按城六区与其他区域差异化定价。</div>
+        <div class="card-comment">补贴退潮后共享两轮进入"要利润"阶段，价格战让位于单车经济性</div>
+        <div class="card-source">来源：<a href="https://news.qq.com/rain/a/20260715A08DT600">腾讯新闻</a></div>
       </div>
-      <div class="news-card cat-ecom" onclick="toggleCard(event, this)" data-brand="抖音电商" data-keywords="抖音电商,商家扶持,百亿降本,AI能力">
+      <div class="news-card cat-ecom" onclick="toggleCard(event, this)" data-brand="苏州外卖" data-keywords="外卖骑手,红灯,配送时长,交管">
         <span class="like-btn" onclick="toggleLike(event,this)">🤍</span>
-        <div class="card-header"><span class="card-num">2</span><span class="card-title">抖音电商二季度为商家降本超百亿元，涵盖9大扶持政策</span></div>
-        <div class="card-body">2026年7月14日抖音电商披露：二季度平台累计为商家节省经营成本超百亿元。除直接费用减免外，还包括提升结算率、开放AI技术能力、分层扶持商家、后台服务升级等多个环节。属于其九大商家扶持政策的Q2落地进展。</div>
-        <div class="card-comment">百亿降本是回应淘天/京东流量补贴战，抖音电商开始从收割转向养鱼</div>
-        <div class="card-source">来源：<a href="https://www.stcn.com/article/detail/4016744.html">证券时报</a> / <a href="https://finance.eastmoney.com/a/202607143805362121.html">东方财富</a></div>
+        <div class="card-header"><span class="card-num">2</span><span class="card-title">全国首创：苏州外卖骑手等红灯不计入配送时长，8月姑苏区/工业园区试点</span></div>
+        <div class="card-body">苏州交管部门推出全国首创新政，将骑手路口红绿灯等待时间纳入配送计时体系剔除，8月初率先在姑苏区和苏州工业园区试点。依托标准化交通信号联网平台，在数据安全前提下打通交管路况预警数据，与各配送平台运行数据互通——骑手等红灯时计时器即暂停。</div>
+        <div class="card-comment">从算法压榨到制度松绑，骑手权益治理开始从平台自律走向公共协同</div>
+        <div class="card-source">来源：<a href="https://news.qq.com/rain/a/20260715A08FVV00">腾讯新闻</a></div>
       </div>
-      <div class="news-card cat-ecom" onclick="toggleCard(event, this)" data-brand="京东" data-keywords="京东,具身智能,机器人,JoyAI">
+      <div class="news-card cat-ecom" onclick="toggleCard(event, this)" data-brand="顺丰同城" data-keywords="微信小微,AI助手,即时配送,同城急送">
         <span class="like-btn" onclick="toggleLike(event,this)">🤍</span>
-        <div class="card-header"><span class="card-num">3</span><span class="card-title">京东与慧仑科技签约：JoyInside+JoyAI能力开放，2026多款机器人硬件登陆</span></div>
-        <div class="card-body">7月11日签约，7月14日财经媒体披露：京东开放JoyInside具身智能交互和JoyAI大模型能力，与慧仑整机自研技术结合，优化机器人智能决策与交互；并基于京东用户洞察数据支持慧仑的产品定义与迭代。计划2026年多款机器人硬件登陆京东，聚焦物流、安防等场景规模化。</div>
-        <div class="card-comment">京东继魔法原子后再落一子，具身智能销售额10亿目标不再是纸上谈兵</div>
-        <div class="card-source">来源：<a href="https://finance.sina.com.cn/tech/roll/2026-07-14/doc-inihtvuh8498202.shtml">新浪财经</a> / <a href="https://finance.eastmoney.com/a/202607143804332378.html">东方财富</a></div>
+        <div class="card-header"><span class="card-num">3</span><span class="card-title">顺丰同城接入微信AI助手"小微"，打造对话式同城急送入口</span></div>
+        <div class="card-body">微信推出原生AI助手"小微"并开启内测，用户可通过自然对话唤起小程序，体验外卖、打车、跑腿等生活服务。第三方即配平台顺丰同城已接入微信AI生态：用户侧打造"对话式"同城急送入口，商家侧基于独立第三方定位承接微信物流需求，构建多层次微信物流服务体系。</div>
+        <div class="card-comment">当"下单"变成"对话"，AI助手正重构即时配送的流量入口与分发权</div>
+        <div class="card-source">来源：<a href="https://finance.sina.com.cn/jjxw/2026-07-15/doc-inihwrqy7957334.shtml">新浪财经 / 扬子晚报</a></div>
       </div>
-      <div class="news-card cat-ecom" onclick="toggleCard(event, this)" data-brand="海关总署" data-keywords="出口,海关,对美贸易,跨境电商">
+      <div class="news-card cat-ecom" onclick="toggleCard(event, this)" data-brand="低空经济" data-keywords="无人机,送外卖,低空经济,民航法">
         <span class="like-btn" onclick="toggleLike(event,this)">🤍</span>
-        <div class="card-header"><span class="card-num">4</span><span class="card-title">中国6月出口同比+5.8%对美骤降16%，跨境电商上半年+10.7%</span></div>
-        <div class="card-body">7月14日海关总署披露6月进出口数据：出口同比+5.8%但对美出口-16%，反映关税战冲击持续；跨境电商上半年进出口6184亿元同比+10.7%，仍是稳定增长引擎。政策层面《扩大消费十五五规划》同日发布，明确2030年社零达60万亿元目标。</div>
-        <div class="card-comment">对美单边跌16%已到痛感区间，SHEIN/Temu海外建仓+多元市场布局窗口更加急迫</div>
-        <div class="card-source">来源：<a href="https://cn.nikkei.com/china/ceconomy/59363-2025-07-14-13-12-43.html">日经中文</a></div>
-      </div>
-      <div class="news-card cat-ecom" onclick="toggleCard(event, this)" data-brand="国务院" data-keywords="消费规划,AI+消费,60万亿,顶层设计">
-        <span class="like-btn" onclick="toggleLike(event,this)">🤍</span>
-        <div class="card-header"><span class="card-num">5</span><span class="card-title">《扩大消费十五五规划》发布：2030社零达60万亿，深推AI+消费</span></div>
-        <div class="card-body">7月14日《扩大消费十五五规划》正式发布：到2030年社会消费品零售总额达60万亿元左右，明确深入推进AI+消费，扩大人工智能手机/电脑、智能穿戴、智能机器人、3D打印等新一代智能终端产品供给，并推动AI赋能生活服务、教育、医疗、文旅。</div>
-        <div class="card-comment">AI+消费首入国家规划，淘宝/抖音的AI导购、AI数字人带货获顶层背书</div>
-        <div class="card-source">来源：<a href="https://finance.cctv.com/2026/07/14/ARTITSjBICtsqXxDD015c3m4260714.shtml">央视财经</a> / <a href="https://wallstreetcn.com/articles/3776797">华尔街见闻</a></div>
+        <div class="card-header"><span class="card-num">4</span><span class="card-title">新版《民航法》7月1日施行，杭州低空经济链路跑通，无人机送外卖商业化提速</span></div>
+        <div class="card-body">新修订的《中华人民共和国民用航空法》7月1日施行，为颁布三十年来首次全面修订，新增"发展促进"专章，首次从国家法律层面明确"优化低空空域资源配置"。国家发改委已成立低空经济司，杭州一条从法律条文到无人机送外卖的低空经济链路已跑通，仅差数家企业协同落地。</div>
+        <div class="card-comment">立法+专管机构双到位，即时配送的"空中运力"从试点迈向规模商用</div>
+        <div class="card-source">来源：<a href="http://mp.weixin.qq.com/s?__biz=MzkzNjk2NjExOA==&mid=2247490132&idx=1&sn=227da25c1fc88060b20547670525a589">城市参访图鉴</a></div>
       </div>
     </div>
 
@@ -584,49 +572,36 @@
     <div class="tab-content" id="tab-media">
       <div class="brand-nav">
         <span class="brand-nav-label">📱 媒体平台 ▸</span>
-        <span class="brand-chip" onclick="scrollToCard('media',0)">世界杯舆情</span>
-        <span class="brand-chip" onclick="scrollToCard('media',1)">微信视频号</span>
-        <span class="brand-chip" onclick="scrollToCard('media',2)">央视</span>
-        <span class="brand-chip" onclick="scrollToCard('media',3)">Meta</span>
+        <span class="brand-chip" onclick="scrollToCard('media',0)">微信"小微"</span>
+        <span class="brand-chip" onclick="scrollToCard('media',1)">开源AI/白宫</span>
+        <span class="brand-chip" onclick="scrollToCard('media',2)">AI摄影争议</span>
       </div>
-      <div class="news-card cat-media" onclick="toggleCard(event, this)" data-brand="世界杯" data-keywords="世界杯,阿根廷,请愿,舆情">
+      <div class="news-card cat-media" onclick="toggleCard(event, this)" data-brand="微信" data-keywords="小微,AI助手,内测,生活服务">
         <span class="like-btn" onclick="toggleLike(event,this)">🤍</span>
-        <div class="card-header"><span class="card-num">1</span><span class="card-title">500万人联署请愿把阿根廷逐出世界杯，1/8决赛争议引爆全球</span></div>
-        <div class="card-body">7月14日国际请愿平台Change数据：要求将阿根廷逐出2026美加墨世界杯的联署人数已超500万，源于1/8决赛争议判罚。斯卡洛尼强硬回击250万签名不代表足球世界。事件登上微博热搜第1，成为世界杯期间最大舆论危机。</div>
-        <div class="card-comment">GOAT叙事+社交媒体+裁判争议三重放大器，让世界杯首次进入民粹化观赛新阶段</div>
-        <div class="card-source">来源：<a href="https://sports.sina.cn/2026-07-14/detail-inihuhkh1227931.d.html">新浪体育</a></div>
+        <div class="card-header"><span class="card-num">1</span><span class="card-title">微信推出原生AI助手"小微"开启内测，对话式唤起外卖/打车/跑腿重构服务入口</span></div>
+        <div class="card-body">微信近期推出原生AI助手"小微"并小范围内测，获邀用户可通过与AI自然对话唤起小程序，体验外卖、打车、跑腿等多种生活服务。顺丰同城等第三方平台已接入其生态。作为13亿月活超级App的原生入口改造，"小微"被视为微信在AI时代重构服务分发的关键落子。</div>
+        <div class="card-comment">超级App把AI设为总入口，小程序生态的流量分发权可能被重新洗牌</div>
+        <div class="card-source">来源：<a href="https://finance.sina.com.cn/jjxw/2026-07-15/doc-inihwrqy7957334.shtml">新浪财经 / 扬子晚报</a></div>
       </div>
-      <div class="news-card cat-media" onclick="toggleCard(event, this)" data-brand="微信视频号" data-keywords="视频号,GMV,短视频带货,腾讯电商">
+      <div class="news-card cat-media" onclick="toggleCard(event, this)" data-brand="开源AI" data-keywords="白宫,开源模型,行政令,监管">
         <span class="like-btn" onclick="toggleLike(event,this)">🤍</span>
-        <div class="card-header"><span class="card-num">2</span><span class="card-title">微信视频号2026 GMV预计破万亿，短视频带货玩家单月GMV超1000万</span></div>
-        <div class="card-body">7月14日多家分析机构预测：微信视频号电商2026年GMV大概率突破万亿口径（不含小程序），单场GMV破5000万记录已被打破。视频号品牌引入激励计划升级，短视频带货玩家单月GMV超1000万的头部案例增多，腾讯电商跑出低补贴+私域新速度。</div>
-        <div class="card-comment">视频号从慢公司变为快公司，成为抖音/淘宝之外淘天真正要提防的第三极</div>
-        <div class="card-source">来源：<a href="https://xueqiu.com/6167778051/388244825">雪球</a> / <a href="https://www.ebrun.com/20251124/623129.shtml">亿邦动力</a></div>
+        <div class="card-header"><span class="card-num">2</span><span class="card-title">白宫拟出台行政令限制开源AI，开源模型面临迄今最严峻生存考验</span></div>
+        <div class="card-body">据外媒报道，白宫正考虑出台一项行政命令限制开源AI，尤其针对由中国公司开发的系统。有高级研究员称，不排除本届政府对使用开源AI表态、甚至限制联邦机构使用某些开源工具。消息令开源产业前景蒙上阴影，业界担忧"留给开源模型的时间只剩6个月"。</div>
+        <div class="card-comment">开源与地缘政治绑定，全球AI生态或被强行切成两套标准</div>
+        <div class="card-source">来源：<a href="https://www.36kr.com/p/3896352668026753">36氪</a></div>
       </div>
-      <div class="news-card cat-media" onclick="toggleCard(event, this)" data-brand="央视" data-keywords="央视,世界杯广告,招商,分权">
+      <div class="news-card cat-media" onclick="toggleCard(event, this)" data-brand="AI摄影" data-keywords="AI生成,摄影比赛,内容真实性,评审">
         <span class="like-btn" onclick="toggleLike(event,this)">🤍</span>
-        <div class="card-header"><span class="card-num">3</span><span class="card-title">央视世界杯广告招商三档IP超23亿触达，强队套溢价40%仍难求</span></div>
-        <div class="card-body">7月14日央视披露世界杯广告招商进展：三档精品IP合计触达超23亿人次，强队套52场溢价40%仍出现一位难求局面。央视试图通过差异化档位重新拿回世界杯品牌主战场话语权，但传统中心化投放正遭遇小红书全平台转播+抖快社交传播的分流。</div>
-        <div class="card-comment">央视世界杯资源从卖方市场逐步过渡到分权市场，未来大促需要多平台组合而非单点押注</div>
-        <div class="card-source">来源：<a href="https://1118.cctv.com/2026/06/22/ARTIPBC5gp95iPdlMKKnkOEA260622.shtml">央视</a> / <a href="https://www.tmtpost.com/7988962.html">钛媒体</a></div>
+        <div class="card-header"><span class="card-num">3</span><span class="card-title">AI假图夺呼和浩特摄影双月赛一等奖，专业评审全程未识破引热议</span></div>
+        <div class="card-body">7月14日，呼和浩特全民摄影双月赛第三期一等奖作品《洒乐园林》被网友实锤为纯AI生成，从初筛到终审的专业评审全程未能识别。事件7月15日全网发酵，再度引爆关于AI生成内容真实性、平台标识与评审机制的讨论。</div>
+        <div class="card-comment">当评委都被骗，"内容可信度"成为AI时代媒体与平台的下一道必答题</div>
+        <div class="card-source">来源：<a href="https://www.cyzone.cn/article/839937.html">创业邦 / 雷科技AGI</a></div>
       </div>
-      <div class="news-card cat-media" onclick="toggleCard(event, this)" data-brand="Meta" data-keywords="Meta,数据中心,污染,AI基建">
-        <span class="like-btn" onclick="toggleLike(event,this)">🤍</span>
-        <div class="card-header"><span class="card-num">4</span><span class="card-title">Meta数据中心排污污染怀俄明再生水，AI基建外部性显性化</span></div>
-        <div class="card-body">7月14日新浪AI热点报：Meta数据中心承包商Goat Systems向夏延市再生水系统排放含罕见Cupriavidus gilardii细菌的废水，导致该系统停运数月，波及Dry Creek和Crow Creek两座水资源回收设施。BOPU已撤销排放许可，事件推动怀俄明州出台数据中心废水新规。</div>
-        <div class="card-comment">AI基建正在从炫技话题转成公共成本，各国数据中心用地/用水许可门槛只会更严</div>
-        <div class="card-source">来源：<a href="https://www.ithome.com/0/972/667.htm">IT之家</a> / <a href="https://m.zhiding.cn/article/3192760.htm">至顶</a></div>
-      </div>
-    </div>
-
-    <!-- ===== 推荐报告 ===== -->
-    <div class="tab-content" id="tab-report">
-      <div class="report-empty">本期无推荐报告</div>
     </div>
 
     <footer>
-      <p>数据来源：财新、华尔街见闻、证券时报、央视财经、日经中文、钛媒体、IT之家、新浪财经等</p>
-      <p>QoderWork 自动生成 | 2026-07-14</p>
+      <p>数据来源：澎湃新闻、36氪、钛媒体、腾讯新闻、新浪财经、DoNews、创业邦、央视财经等</p>
+      <p>QoderWork 自动生成 | 2026-07-15 · No.129</p>
     </footer>
   </div>
 
@@ -655,7 +630,7 @@
       allExpanded = false;
       document.querySelector('.expand-all-btn').textContent = '📖 全部展开';
       // Reset filter in new tab
-      const tabIds = ['ai','brand','ecom','media','report'];
+      const tabIds = ['ai','brand','ecom','media'];
       resetFilter(tabIds[index]);
     }
 
@@ -722,7 +697,7 @@
       });
 
       savePreference({
-        date: '2026-07-14',
+        date: '2026-07-15',
         items: titles.map((t, i) => ({ brand: brands[i], title: t })),
         keywords: [...keywords],
         brands: [...new Set(brands)]
@@ -816,7 +791,6 @@
     // Reset filter when clicking on active chip again or pressing Escape
     function resetFilter(tabId) {
       const container = document.getElementById('tab-' + tabId);
-      if (!container) return;
       const cards = container.querySelectorAll('.news-card');
       cards.forEach(card => {
         card.classList.remove('highlighted', 'expanded');
